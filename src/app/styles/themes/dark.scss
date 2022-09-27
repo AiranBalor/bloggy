@@ -1,0 +1,13 @@
+.app.dark {
+  --bg-color: black;
+  --primary-color: green;
+  --second-color: grey;
+  --inverted-bg-color: white;
+  --inverted-primary-color: black;
+  --inverted-second-color: green;
+}
+
+button {
+  background-color: var(--second-color);
+  color: black;
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // настройка, требующая явно указывать типы данных для TS. лучше держать true
+    "noImplicitAny": true,
+    // определяет тип модуля
+    "module": "esnext",
+    // настройка, определяющая, в какой синтаксис компилируется сборка. обычно ES6/ES5
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // 2 настройки ниже нужны для использования обычных импортов в webpack вместо require и * as
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    //означает, что пути к файлам начинаются с папки src
+    "paths": {
+      "*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
