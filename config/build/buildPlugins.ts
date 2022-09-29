@@ -18,7 +18,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     }),
     // плагин для использования глобальных переменных в проекте. См. конфигурацию i18n
     new webpack.DefinePlugin({
-      _IS_DEV_: JSON.stringify(isDev),
+      __IS_DEV__: JSON.stringify(isDev),
     }),
     new ReactRefreshWebpackPlugin(),
   ];

@@ -9,7 +9,6 @@ const MainPage = () => {
   return (
     <div>
       {t('Главная страница')}
-      <p>{t('New key')}</p>
     </div>
 
   );
