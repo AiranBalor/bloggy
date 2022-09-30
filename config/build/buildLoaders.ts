@@ -57,12 +57,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-            ['i18next-extract', {
-              outputPath: 'babelTranslations/{{locale}}/{{ns}}.json',
-              locales: ['en', 'ru'],
-              keyAsDefaultValue: true,
-            }],
-          ],
+          ['i18next-extract', {
+            outputPath: 'babelTranslations/{{locale}}/{{ns}}.json',
+            locales: ['en', 'ru'],
+            keyAsDefaultValue: true,
+          }],
+        ],
       },
     },
   };
