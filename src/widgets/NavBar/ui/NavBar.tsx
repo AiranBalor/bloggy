@@ -8,7 +8,7 @@ interface NavBarProps {
 }
 
 export const NavBar = ({ className }: NavBarProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
       <div className={classes.navLinks}>
