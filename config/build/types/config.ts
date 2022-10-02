@@ -10,11 +10,13 @@ export interface BuildPaths {
 export interface BuildEvn {
   mode: BuildMode;
   port: number;
+  analyze: number
 }
 
 export interface BuildOptions {
   mode: BuildMode,
   paths: BuildPaths,
   isDev: boolean,
-  port: number
+  port: number,
+  analyze: number
 }
