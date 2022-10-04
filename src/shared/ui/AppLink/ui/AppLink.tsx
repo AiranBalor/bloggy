@@ -3,7 +3,7 @@ import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import classes from './AppLink.module.scss';
 // опишем темы для ссылок, которые будут использоваться по всему приложению
-enum AppLinkTheme {
+export enum AppLinkTheme {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
 }
