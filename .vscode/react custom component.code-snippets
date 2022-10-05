@@ -1,0 +1,23 @@
+{
+	"Custom React Component": {
+		"prefix": "rcc",
+		"body": [
+			"import { useTranslation } from 'react-i18next';",
+			"import { classNames } from 'shared/lib/classNames/classNames';",
+			"import classes from './$TM_FILENAME_BASE.module.scss';",
+			"",
+			"interface $TM_FILENAME_BASE$Props {",
+			"  className?: string",
+			"}",
+			"",
+			"export const $TM_FILENAME_BASE = ({ className }: $TM_FILENAME_BASE$Props) => {",
+			"  const { t } = useTranslation();",
+			"  return (",
+			"    <div className={classNames(classes.$TM_FILENAME_BASE, {}, [className])}>",
+			"    </div>",
+			"  );",
+			"};"
+		],
+		"description": "React Custom component"
+	}
+}
