@@ -1,5 +1,5 @@
-import { Story } from '@storybook/react'
-import 'app/styles/index.scss'
+import { Story } from '@storybook/react';
+import 'app/styles/index.scss';
 // Весь декоратор сводится к подключению глобальных стилей к компоненту (по умолчанию компонент про такие вещи не знает, т.к.
 // отрисовывается в сторибуке изолированно. Аналогично со всякого рода провайдерами и библиотеками)
-export const StyleDecorator = (story: () => Story) => story()
+export const StyleDecorator = (story: () => Story) => story();

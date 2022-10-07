@@ -38,9 +38,10 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { code: 100, ignoreComments: true }],
+    'max-len': ['warn', { code: 100, ignoreComments: true }],
     'i18next/no-literal-string': [0, { markupOnly: true }],
     'linebreak-style': [1, 'windows'],
+    'no-param-reassign' : 'warn'
   },
   globals: {
     __IS_DEV__: true,

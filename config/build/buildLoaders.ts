@@ -5,7 +5,7 @@ import { BuildOptions } from './types/config';
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // порядок лоадеров важен
 
-  const cssLoader = buildCssLoader(isDev)
+  const cssLoader = buildCssLoader(isDev);
 
   const typescriptLoader = {
     test: /\.tsx?$/,
