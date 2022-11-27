@@ -14,9 +14,9 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 import {
-    getArticlesPageError,
-    getArticlesPageIsLoading,
-    getArticlesPageView,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
@@ -24,43 +24,43 @@ interface ArticlesPageProps {
 }
 
 const reducers: ReducersList = {
-    articlesPage: articlesPageReducer,
+  articlesPage: articlesPageReducer,
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-    const { className } = props;
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const view = useSelector(getArticlesPageView);
-    const error = useSelector(getArticlesPageError);
-    const [searchParams] = useSearchParams();
+  const { className } = props;
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const articles = useSelector(getArticles.selectAll);
+  const isLoading = useSelector(getArticlesPageIsLoading);
+  const view = useSelector(getArticlesPageView);
+  const error = useSelector(getArticlesPageError);
+  const [searchParams] = useSearchParams();
 
-    const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
-    }, [dispatch]);
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams));
-    });
+  useInitialEffect(() => {
+    dispatch(initArticlesPage(searchParams));
+  });
 
-    return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page
-                onScrollEnd={onLoadNextPart}
-                className={classNames(cls.ArticlesPage, {}, [className])}
-            >
-                <ArticlesPageFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={cls.list}
-                />
-            </Page>
-        </DynamicModuleLoader>
-    );
+  return (
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cls.ArticlesPage, {}, [className])}
+      >
+        <ArticlesPageFilters />
+        <ArticleList
+          isLoading={isLoading}
+          view={view}
+          articles={articles}
+          className={cls.list}
+        />
+      </Page>
+    </DynamicModuleLoader>
+  );
 };
 
 export default memo(ArticlesPage);

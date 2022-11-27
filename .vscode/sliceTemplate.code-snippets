@@ -1,0 +1,25 @@
+{
+	"slice template": {
+		"prefix": "slt",
+		"body": [
+			"import { createSlice, PayloadAction } from '@reduxjs/toolkit';",
+			"import { $TM_FILENAME_BASE$Schema } from '../types/$TM_FILENAME_BASE$';",
+			"",
+			"const initialState: $TM_FILENAME_BASE$Schema = {",
+
+			"};",
+			"",
+			"export const $TM_FILENAME_BASE = createSlice({",
+			"  name: '$TM_FILENAME_BASE',",
+			"  initialState,",
+			"  reducers: {},",
+			"  extraReducers: (builder) => {},",
+			"});",
+			"",
+			"export const { actions: $TM_FILENAME_BASE$Actions } = $TM_FILENAME_BASE;",
+			"export const { reducer: $TM_FILENAME_BASE$Reducer } = $TM_FILENAME_BASE;",
+			""
+		],
+		"description": "slice template"
+	}
+}

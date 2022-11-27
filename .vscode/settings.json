@@ -2,5 +2,60 @@
   "i18n-ally.localesPaths": [
     "public/locales",
     "src/shared/config/i18n"
-  ]
+  ],
+  "i18n-ally.keystyle": "flat",
+  //fix lint errors on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true 
+  },
+  "eslint.validate": ["javascript"],
+  "folderTemplates.structures": [
+    {
+      "name": "React Component Template",
+      "omitParentDirectory": false,
+      "structure": [
+        {
+          "fileName": "ui/<FTName>.tsx",
+          "template": "Typescript Functional Component"
+        },
+        {
+          "fileName": "ui/<FTName>.module.scss",
+          "template": "SCSS Module"
+        },
+        {
+          "fileName": "ui/<FTName>.stories.tsx"
+        },
+        {
+          "fileName": "index.ts",
+          "template": "Public API"
+        }
+      ]
+    }
+  ],
+  "folderTemplates.fileTemplates": {
+    "Typescript Functional Component": [
+			"import { useTranslation } from 'react-i18next';",
+			"import { classNames } from 'shared/lib/classNames/classNames';",
+      "import { memo } from 'react';",
+			"import classes from './<FTName>.module.scss';",
+			"",
+			"export interface <FTName>Props {",
+			"  className?: string",
+			"}",
+			"",
+			"export const <FTName> = memo(({ className }: <FTName>Props) => {",
+			"  const { t } = useTranslation();",
+			"  return (",
+			"    <div className={classNames(classes.<FTName>, {}, [className])}>",
+			"    </div>",
+			"  );",
+			"});"
+    ],
+    "Public API": "export { <FTName> } from './ui/<FTName>';\n",
+    "SCSS Module": [".<FTName> {",
+                      "color: inherit;",
+    "}"
+    ]
+  }
 }
