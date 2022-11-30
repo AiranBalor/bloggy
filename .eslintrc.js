@@ -33,7 +33,7 @@ module.exports = {
     ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'no-unused-vars': 'off',
+    'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -43,7 +43,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': [
-      'error',
+      'off',
       {
         markupOnly: true,
         ignoreAttribute: ['data-testid', 'to', 'target'],
