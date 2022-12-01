@@ -8,4 +8,18 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  .card {
+    width: 20%;
+  }
+}
+
+.smallCard {
+  width: 230px;
+}
+
+.cardWrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 }
