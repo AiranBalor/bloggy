@@ -56,6 +56,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0
         ? (
+          // добавить условный рендеринг для view. для Small попробовать отрисовать VirtuosoGrid
           <Virtuoso
             style={{
               height: '100vh', width: '100%',
