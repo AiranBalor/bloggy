@@ -10,7 +10,6 @@ export interface ArticleCreatePageProps {
 export const ArticleCreatePage = memo(({ className }: ArticleCreatePageProps) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(classes.ArticleCreatePage, {}, [className])}>
-    </div>
+    <div className={classNames(classes.ArticleCreatePage, {}, [className])} />
   );
 });
