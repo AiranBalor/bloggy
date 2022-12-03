@@ -32,8 +32,11 @@ const gapClasses: Record<FlexGap, string> = {
   16: classes.gap16,
   32: classes.gap32,
 };
+// можно поиграться с семантикой, чтобы переопределить обычный див как navigation, например
+// хотя это извращение
+type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-export interface FlexProps {
+export interface FlexProps extends DivProps {
   className?: string
   children: ReactNode
   justify?: FlexJustify
