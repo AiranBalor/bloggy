@@ -22,7 +22,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
-    // 'fsd-frontend-advanced',
+    'fsd-frontend-advanced',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -59,7 +59,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
-    // 'fsd-frontend-advanced/path-checker': 'error',
+    'fsd-frontend-advanced/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

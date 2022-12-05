@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/Input';
+import { HListBox } from 'shared/ui/HListBox';
+import { HStack } from 'shared/ui/Stack';
+import { Page } from 'widgets/Page';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -11,9 +13,21 @@ const MainPage = () => {
   };
 
   return (
-    <div>
+    <Page>
       {t('Главная страница')}
-    </div>
+      <HStack>
+        <HListBox
+          defaultValue="Выберите значение"
+          value={undefined}
+          onChange={(value: string) => {}}
+          items={[
+            { value: 'qweqew', content: 'qeqwewqewq' },
+            { value: '1212312', content: '123123123', disabled: true },
+            { value: 'qweqew1231231', content: 'qeqwewqewq12312121' },
+          ]}
+        />
+      </HStack>
+    </Page>
   );
 };
 
