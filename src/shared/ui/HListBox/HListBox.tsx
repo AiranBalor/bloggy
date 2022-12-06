@@ -4,13 +4,11 @@ import {
 } from 'react';
 import { Listbox } from '@headlessui/react';
 import CheckIcon from 'shared/assets/icons/CheckIcon.svg';
-import { useTranslation } from 'react-i18next';
+import { DropdownDirection } from 'shared/types/ui';
 import classes from './HListBox.module.scss';
 import { Icon } from '../Icon/Icon';
 import { HStack } from '../Stack';
 import { Button } from '../Button/Button';
-
-type DropdownDirection = 'bottom' | 'top'
 
 export interface ListBoxItem {
   value: string;
@@ -37,7 +35,7 @@ export const HListBox = memo((props: HListBoxProps) => {
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom_right',
     label,
   } = props;
 

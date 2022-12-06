@@ -1,9 +1,5 @@
 .HListBox {
   position: relative;
-
-  .top {
-    bottom: 100%;
-  }
 }
 
 .trigger {
@@ -21,11 +17,28 @@
   background-color: var(--inverted-bg-color);
   color: var(--bg-color);
   position: absolute;
-  left: 2px;
   z-index: 3;
   border-radius: 12px;
   box-shadow: 2px 2px 8px var(--inverted-bg-color), -2px -2px 8px var(--inverted-bg-color);
   min-width: 100%;
+}
+
+.bottom_right {
+  top: 100%;
+}
+
+.bottom_left {
+  top: 100%;
+  right: 0;
+}
+
+.top_right {
+  bottom: 100%;
+}
+
+.top_left {
+  bottom: 100%;
+  right: 0;
 }
 
 .selectItem {
