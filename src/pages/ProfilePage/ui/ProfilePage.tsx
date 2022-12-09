@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { VStack } from 'shared/ui/Stack';
-import { EditableProfileCard, EditableProfileCardHeader } from 'features/EditableProfileCard';
+import { EditableProfileCard } from 'features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
@@ -22,8 +22,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <Page className={classNames('', {}, [className])}>
-      <VStack fullWidth>
-        <EditableProfileCardHeader />
+      <VStack>
         <EditableProfileCard id={id} />
       </VStack>
     </Page>
