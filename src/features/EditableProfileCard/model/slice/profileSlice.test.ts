@@ -3,7 +3,7 @@ import { Currency } from 'entities/Currency';
 import {
   profileActions, profileReducer,
 } from './profileSlice';
-import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { ProfileSchema, ValidateProfileError } from '../types/editableProfile';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 const data = {

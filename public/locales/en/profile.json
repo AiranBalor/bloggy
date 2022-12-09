@@ -17,5 +17,6 @@
   "Имя и фамилия обязательны": "First and last name are required",
   "Данные не указаны": "Data is not specified",
   "Некорректный возраст": "Incorrect age",
-  "Choose value": "Choose value"
+  "Choose value": "Choose value",
+  "Such user does not exist": "Such user does not exist"
 }
