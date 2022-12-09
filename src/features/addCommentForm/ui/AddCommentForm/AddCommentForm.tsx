@@ -20,6 +20,11 @@ const reducers: ReducersList = {
   addCommentForm: addCommentFormReducer,
 };
 
+// по хорошему нужно было сделать так: поскольку форма с комментами может использоваться
+// по всему приложению, нужно было компонент переместить в entities - CommentForm, создать
+// отдельную фичу для комментов для статей ArticleComments, где реальзовать логику запросов
+// и далее эту фичу помещать уже в page ArticleDetails
+
 const AddCommentForm = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
   const { t } = useTranslation();
