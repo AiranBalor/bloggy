@@ -15,7 +15,7 @@ export const ArticleRecommendation = memo(({ className }: ArticleRecommendationP
   const { t } = useTranslation();
   const { isLoading, data: articles, error } = useArticleRecommendations(3);
 
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null;
   }
 
@@ -28,6 +28,7 @@ export const ArticleRecommendation = memo(({ className }: ArticleRecommendationP
       <ArticleList
         articles={articles}
         target="_blank"
+        virtualized={false}
       />
     </VStack>
   );

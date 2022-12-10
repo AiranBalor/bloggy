@@ -5,7 +5,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Virtuoso } from 'react-virtuoso';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import cls from './ArticleList.module.scss';
+import classes from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 
 interface ArticleListProps {
@@ -14,12 +14,13 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget
+    virtualized?: boolean
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
   .fill(0)
   .map((item, index) => (
-    <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    <ArticleListItemSkeleton className={classes.card} key={index} view={view} />
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -29,6 +30,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleView.SMALL,
     isLoading,
     target,
+    virtualized = true,
   } = props;
   const { t } = useTranslation();
 
@@ -36,7 +38,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     <ArticleListItem
       article={article}
       view={view}
-      className={cls.card}
+      className={classes.card}
       key={article.id}
       target={target}
     />
@@ -44,7 +46,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   if (!isLoading && !articles.length) {
     return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      <div className={classNames(classes.ArticleList, {}, [className, classes[view]])}>
         <Text size={TextSize.L} title={t('Статьи не найдены')} />
       </div>
     );
@@ -53,8 +55,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const articlesData = articles.map(renderArticle);
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length > 0
+    <div className={classNames(classes.ArticleList, {}, [className, classes[view]])}>
+      { virtualized
         ? (
           // добавить условный рендеринг для view. для Small попробовать отрисовать VirtuosoGrid
           <Virtuoso
@@ -68,7 +70,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
             )}
           />
         )
-        : null}
+        : articles.map((article) => {
+          return renderArticle(article);
+        })}
       {isLoading && getSkeletons(view)}
     </div>
   );
