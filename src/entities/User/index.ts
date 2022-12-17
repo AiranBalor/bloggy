@@ -13,4 +13,11 @@ export {
 export {
   UserSchema,
   User,
+  UserRoles,
 } from './model/types/user';
+
+export {
+  isUserAdmin,
+  isUserManager,
+  getUserRoles,
+} from './model/selectors/roleSelectors/roleSelectors';

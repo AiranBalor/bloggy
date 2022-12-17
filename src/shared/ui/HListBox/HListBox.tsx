@@ -54,15 +54,14 @@ export const HListBox = memo((props: HListBoxProps) => {
         onChange={onChange}
         disabled={readonly}
       >
-
-        <Listbox.Button disabled={readonly} className={classes.trigger}>
+        <Listbox.Button className={classes.trigger} as="div">
           <Button className={classes.selectBtn} disabled={readonly}>
             {value ?? defaultValue}
           </Button>
         </Listbox.Button>
         <Listbox.Options className={classNames(classes.selectList, {}, optionClasses)}>
           {items?.map(({ value, content, disabled = false }) => (
-            <HStack align="center">
+            <HStack align="center" key={value}>
               <Listbox.Option
                 key={value}
                 value={value}

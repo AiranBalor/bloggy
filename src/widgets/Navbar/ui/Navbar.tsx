@@ -4,7 +4,9 @@ import React, { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -21,6 +23,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -34,6 +37,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  // вот тут интересный момент с условной логикой по отрисовке массива
+  // обернут условную логику в скобки и применив спред-оператор для расширения элемента массива, можно
+  // прямо внутри массива items определять, каким будет содержимое его элемента
   if (authData) {
     return (
       <header className={classNames(classes.Navbar, {}, [className])}>
@@ -58,6 +64,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           )}
           items={
             [
+              ...(isAdmin ? [{
+                content: t('Панель админа'),
+                href: RoutePath.admin,
+              }] : []),
               {
                 content: t('Профиль'),
                 href: RoutePath.profile + authData.id,

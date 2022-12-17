@@ -1,4 +1,6 @@
-import { memo, ReactNode } from 'react';
+import {
+  DetailedHTMLProps, HTMLAttributes, ReactNode,
+} from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import classes from './Flex.module.scss';
 
@@ -34,7 +36,7 @@ const gapClasses: Record<FlexGap, string> = {
 };
 // можно поиграться с семантикой, чтобы переопределить обычный див как navigation, например
 // хотя это извращение
-type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export interface FlexProps extends DivProps {
   className?: string
