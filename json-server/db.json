@@ -613,6 +613,12 @@
       "userId": "1",
       "text": "abc",
       "id": "WtJuoBF"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "Привет Котлин!",
+      "id": "JQ1m9bW"
     }
   ],
   "users": [
@@ -620,21 +626,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://klike.net/uploads/posts/2019-05/1556708032_1.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],

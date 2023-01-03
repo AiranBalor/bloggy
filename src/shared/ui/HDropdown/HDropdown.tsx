@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Fragment, memo, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Menu } from '@headlessui/react';
@@ -50,14 +49,14 @@ export const HDropdown = memo((props: HDropdownProps) => {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={item.content}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item as={Fragment} disabled={item.disabled} key={item.content}>
               {content}
             </Menu.Item>
           );

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { AboutPage } from 'pages/AboutPage';
 import { Page } from './Page';
 
 export default {
@@ -9,9 +11,15 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof Page>;
 
 const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  children:
+  <Suspense fallback="Идет загрузка...">
+    <AboutPage />
+  </Suspense>,
+};
