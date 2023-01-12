@@ -4,5 +4,6 @@
   "Назад к списку": "Назад к списку",
   "Recommendations": "Рекомендации",
   "Edit article": "Редактировать статью",
-  "Error: no data has been uploaded": "Ошибка: данные не были загружены"
+  "Error: no data has been uploaded": "Ошибка: данные не были загружены",
+  "Loading": "Идет загрузка..."
 }

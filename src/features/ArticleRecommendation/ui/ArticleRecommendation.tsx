@@ -4,7 +4,6 @@ import { memo } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { ArticleList } from 'entities/Article';
 import { VStack } from 'shared/ui/Stack';
-import { rtkApi } from 'shared/api/rtkApi';
 import { useArticleRecommendations } from '../api/articleRecommendationsApi';
 
 export interface ArticleRecommendationProps {
