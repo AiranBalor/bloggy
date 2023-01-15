@@ -1,4 +1,4 @@
-export { ProfileSchema } from './model/types/editableProfile';
+export type { ProfileSchema } from './model/types/editableProfile';
 
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 
